@@ -1,0 +1,19 @@
+.card{
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    display: inline-block;
+}
+#container{
+    height: 570px;
+    width: 560px;   
+    margin: 0 auto;
+    background-color: dimgrey;
+}
+#fixed{
+	position: fixed;
+	bottom: 39%;
+	right: 29%;
+	font-size: 85px;
+	color: white;
+}
