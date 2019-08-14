@@ -36,7 +36,7 @@ function turn(event) {
         num++;
         if(num === 16){
 			let h1 = document.createElement("h1");
-			h1.innerHTML = "You Won!!!";
+			h1.innerHTML = "You Won!!";
 			h1.id = "fixed"
 			body.appendChild(h1);
 		}
