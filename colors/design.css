@@ -1,0 +1,16 @@
+h1{
+	position: relative;
+	left: 200px;
+}
+#square{
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	left: 187px;
+	background-color: rgb(128,128,128);
+}
+#inputs{
+	position: relative;
+	left: 35px;
+}
