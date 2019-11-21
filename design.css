@@ -1,141 +1,216 @@
-body { 
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url("wallpaper.png");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+body{
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    height: 92vh;
+    width: auto;
+    background-size: cover;
+    background-position: center center;
 }
-.header {
-  overflow: hidden;
-  padding: 20px;
-  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%); 
+
+/* BUTTONS... */
+#mySidenav a {
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
 }
-.header* {
-  float: left;
-  color: black;
-  text-align: center;
-  font-size: 18px; 
-  line-height: 25px;
-  border-radius: 4px;
+
+#mySidenav a:hover {
+    left: 0;
 }
-.header a:hover {
-  background-color: #ddd;
-  color: black;
+
+#about {
+    top: 20px;
+    background-color: #4CAF50;
 }
-.header a:active {
-  background-color: dodgerblue;
-  color: white;
+
+#projects {
+    top: 80px;
+    background-color: #f44336;
 }
-#links {
-  float: right;
+
+#contact {
+    top: 140px;
+    background-color: #555
 }
-.header a {
-	padding: 5px;
-	border-radius: 10px;
-	text-decoration: none;
-	margin: 5px; 
+@media screen and (max-width: 1000px) {
+    #mySidenav a {
+        width: 80px;
+        padding: 10px;
+        font-size: 15px;
+    }
+    #about {top: 20px}
+    #projects {top: 70px}
+    #contact {top: 120px}
 }
-#name{
-	display: inline-block;
-  	position: fixed;
-  	top: -10px;
+/* ABOUT, PROJECTS, CONTACT... */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
 }
-@media screen and (max-width: 600px) {
-  .header a {
-    float: none;
+
+.overlay-content {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    color: white;
+    left: 10%;
+}
+.overlay h1{
+    position: relative;
+    left: 5%;
+}
+.overlay a {
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
     display: block;
-    text-align: left;
-  }
-  #home,#about,#skills{
-  	position: static;
-  }
-  p{
-  	float: none;
-  	width: 100px;
-  	display: block;
-  }
-}
-.sticky{
-	position: fixed;
-	width: 98%;
-	top: 0;
-	z-index: 1;
-}
-.content{
-	padding: 16px;
-	position: relative;
-	top: 30px;
+    transition: 0.3s;
+    z-index: 1;
 }
 
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
 
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
 
-#home{
-	padding: 30px;
-	height: 130px;
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+}
+/* html */
+.myProgress{
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  display: none;
+}
+.myBar{
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 5px;
+}
+
+#skills >div{
+  display: inline-block;
+  padding: 10px;
 }
 #info{
-	position: relative;
-	bottom: 95px;
-    left: 300px;
-    border: 1px solid black;
-    width: 800px;
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    width: 20%;
+    height: auto;
+}
+/* TYPEWRITER */
+#demo{
     text-align: center;
-    color: white;
+    position: relative;
+    left: 18%;
+    padding:15% 0;
+    font-size: 40px;
+    width: 40%;
+
+}
+@media screen and (max-width: 1000px){
+    #demo {font-size: 35px}      
+}
+@media screen and (max-width: 600px){
+    #demo {font-size: 25px}      
 }
 
-
-#about{
-	padding: 30px;
-	height: 130px;
-}
-.about{
-	position: relative;
-	bottom: 95px;
-    left: 300px;
-    border: 1px solid black;
-    width: 800px;
-    text-align: center;
-    color: white;
-}
-
-
-#skills{
-	padding: 30px;
-	height: 130px;
-}
-.skills{
-	position: relative;
-	bottom: 95px;
-    left: 300px;
-    border: 1px solid black;
-    width: 800px;
-    text-align: center;
-    color: white;
-}
-p{
-	padding: 5px
-}
-
-
-#portfolio *{
-	display: inline-block;
-	text-align: center; 
-	width: 30%;
-	margin: auto;
-}
-#memoGame *, #colorPicker *, #gameOfLive *{
-	display: block;
-}
-
-#map {
-    width: 60%;
+/* IMAGE */
+#image{
+    position: absolute;
+    left: 80%;
+    top: 15%;
+    width: 200px;
     height: 300px;
-    background-color: grey;
+    background-color: rgb(206, 88, 88);
+    border: 1px solid black;
+}
+@media screen and (max-width: 1000px){
+    #image{
+        width: 150px;
+        height: 225px;
+        top: 12%;
+    }
+}
+@media screen and (max-width: 600px){
+    #image{
+        width: 100px;
+        height: 150px;
+        top: 10%;
+    }
+}   
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
-#contact *{
-	display: inline-block;
-	color: white;
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+#image:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+#image:hover .image {
+  opacity: 0.3;
+}
+#image:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: rgb(76, 130, 175);
+  color: white;
+  font-size: 12px;
+  padding: 16px 32px;
+  border-radius: 5px;
+}
+#portfolio{
+  margin: 15% auto;
+}
+#portfolio * {
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  margin: auto;
 }
